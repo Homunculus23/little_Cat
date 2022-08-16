@@ -17,10 +17,10 @@ const $add_url = $icon_wrapper.find('.add_url');
 const xObject = JSON.parse(localStorage.getItem('x'));  //getItem从localStorage中取出'x'的信息，然后用parse转化为数组
 const hashMap = xObject || [
     {
-        name: 'MDN中文', url: 'developer.mozilla.org', shortcuts: 'm'
+        name: 'MDN中文', url: 'https://developer.mozilla.org', shortcuts: 'm'
     },
     {
-        name: '写代码啦', url: 'xiedaimala.com', shortcuts: 'x'
+        name: '写代码啦', url: 'https://xiedaimala.com', shortcuts: 'x'
     }
 ]
 
@@ -32,6 +32,7 @@ let removeOfBeginning = (url) => {
 let render = () => {
     $icon_wrapper.find('.icon_close').remove();
     hashMap.forEach((node, index) => {
+        console.log(node)
         const $icon_Click = $(`
             <div href="${node.url}" class="icon_Click icon_close" title="${node.url}快捷键为: ${node.shortcuts}">
                 <span class="icon_icon">${node.name[0]}</span>
