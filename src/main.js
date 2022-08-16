@@ -7,8 +7,8 @@
         window.onbeforeunload = () => {
             localStorage.removeItem('x');   //清空网页缓存
         }
+        location.reload(); 
     }
-    location.reload(); 
 })
 
 const $icon_wrapper = $('.icon_wrapper');
@@ -32,7 +32,6 @@ let removeOfBeginning = (url) => {
 let render = () => {
     $icon_wrapper.find('.icon_close').remove();
     hashMap.forEach((node, index) => {
-        console.log(node)
         const $icon_Click = $(`
             <div href="${node.url}" class="icon_Click icon_close" title="${node.url}快捷键为: ${node.shortcuts}">
                 <span class="icon_icon">${node.name[0]}</span>
@@ -52,12 +51,11 @@ $add_url.on('click', () => {
     if(url.indexOf('http') !== 0) {
         url = 'https://' + url;
     }
-    let name = window.prompt('请输入网址名称，不输入则以网址作为名称，同时以网址首字母作为快捷键，快捷键冲突时进入第一个对应网站');
-    let shortcuts;
+    let name = window.prompt('请输入网址名称，不输入则以网址作为名称');
     if(!name) {
         name = removeOfBeginning(url);
-        shortcuts = window.prompt('请输入单字母快捷键，不输入则以网址首字母作为快捷键');
     }
+    let shortcuts = window.prompt('请输入单字母快捷键，不输入则以网址首字母作为快捷键，快捷键冲突时进入第一个对应网站');
     if(!shortcuts) {
         shortcuts = name[0]
     }
