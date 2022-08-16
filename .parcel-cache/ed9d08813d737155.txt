@@ -1,0 +1,13 @@
+12
+40D:\Study\code\html_css\littleCat\.vscode133049274374120292 1
+44D:\Study\code\html_css\littleCat\src\main.js133051191057748546 0
+37D:\Study\code\html_css\littleCat\dist133051201292012932 1
+36D:\Study\code\html_css\littleCat\src133050912167528257 1
+47D:\Study\code\html_css\littleCat\src\index.html133051160377222695 0
+46D:\Study\code\html_css\littleCat\src\style.css133051167630024692 0
+60D:\Study\code\html_css\littleCat\dist\index.1f58c3aa.css.map133051201292002955 0
+56D:\Study\code\html_css\littleCat\dist\index.1f58c3aa.css133051201291973029 0
+55D:\Study\code\html_css\littleCat\dist\index.7e443719.js133051201291973029 0
+59D:\Study\code\html_css\littleCat\dist\index.7e443719.js.map133051201292002955 0
+48D:\Study\code\html_css\littleCat\dist\index.html133051201291973029 0
+54D:\Study\code\html_css\littleCat\.vscode\settings.json133050959647382539 0
