@@ -117,11 +117,23 @@ $('.activate_delete').on('click', () => {   //40行。。。算了暂时先这�
     })
 })
 
+let in_focus = false;
+
+$('.input_search').focus('click', ()=>{
+    in_focus = true;
+})
+
+$('.input_search').blur('click', ()=>{
+    in_focus = false;
+})
+
 $(document).on('keypress', (e)=>{
-    const {key} = e;
-    for (let i = 0; i < hashMap.length; i++) {
-        if(hashMap[i].shortcuts === key) {
-            window.open(hashMap[i].url)
+    if(!in_focus){
+        const {key} = e;
+        for (let i = 0; i < hashMap.length; i++) {
+            if(hashMap[i].shortcuts === key) {
+                window.open(hashMap[i].url)
+            }
         }
     }
 })
