@@ -8,6 +8,7 @@
             localStorage.removeItem('x');   //清空网页缓存
         }
         location.reload(); 
+        
     }
 })
 
@@ -55,9 +56,10 @@ $add_url.on('click', () => {
     if(!name) {
         name = removeOfBeginning(url);
     }
-    let shortcuts = window.prompt('请输入单字母快捷键，不输入则以网址首字母作为快捷键，快捷键冲突时进入第一个对应网站');
+    const icon = removeOfBeginning(url)[0]
+    let shortcuts = window.prompt('请输入单字母快捷键，不输入则以网址首字母作为快捷键，快捷键冲突时进入第一个对应网站', icon);
     if(!shortcuts) {
-        shortcuts = name[0]
+        shortcuts = icon;
     }
     hashMap.push({
         name: name,
