@@ -76,7 +76,15 @@ window.onbeforeunload = () => {
 
 let number_activate_delete = 0;
 
-$('.activate_delete').on('click', () => {   //40行。。。算了暂时先这样吧
+const $activate_delete = $('.activate_delete')
+
+const exit_delete = () => {
+    $activate_delete.on('click', () => {
+        location.reload(); 
+    })
+}
+
+$activate_delete.on('click', () => {   //40行。。。算了暂时先这样吧
     let delete_confirm;
     if(number_activate_delete%2 === 0) {
         delete_confirm = window.confirm(`
@@ -84,11 +92,9 @@ $('.activate_delete').on('click', () => {   //40行。。。算了暂时先这�
             点击×后，将直接移除标签。
             再次点击回收站或刷新网页，退出删除状态。
         `);
-        if (delete_confirm) {
-            number_activate_delete++;
-        }
     }
     if(delete_confirm) {
+        number_activate_delete++;
         $icon_wrapper.find('.icon_close').remove();
         hashMap.forEach((node, index) => {
             const $icon_Click = $(`
@@ -111,19 +117,20 @@ $('.activate_delete').on('click', () => {   //40行。。。算了暂时先这�
                 hashMap.splice(index, 1);
             })
         });
+        exit_delete();
     }
-    $('.activate_delete').on('click', () => {
-        location.reload(); 
-    })
 })
+
+
+const $input_search = $('.input_search');
 
 let in_focus = false;
 
-$('.input_search').focus('click', ()=>{
+$input_search.focus('click', ()=>{
     in_focus = true;
 })
 
-$('.input_search').blur('click', ()=>{
+$input_search.blur('click', ()=>{
     in_focus = false;
 })
 
