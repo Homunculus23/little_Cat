@@ -35,7 +35,7 @@ let render = () => {
     hashMap.forEach((node, index) => {
         const $icon_Click = $(`
             <div href="${node.url}" class="icon_Click icon_close" title="${node.url}快捷键为: ${node.shortcuts}">
-                <span class="icon_icon">${node.name[0]}</span>
+                <span class="icon_icon">${node.shortcuts[0]}</span>
                 <span class="text">${node.name}</span>
             </div>
         `).insertBefore($add_url);
@@ -99,7 +99,7 @@ $activate_delete.on('click', () => {   //40行。。。算了暂时先这样吧
         hashMap.forEach((node, index) => {
             const $icon_Click = $(`
                 <div href="${node.url}" class="icon_Click icon_close" title="${node.url}快捷键为: ${node.shortcuts}">
-                    <span class="icon_icon">${node.name[0]}</span>
+                    <span class="icon_icon">${node.shortcuts[0]}</span>
                     <span class="text">${node.name}</span>
                     <div class="delete_url icon_${index}">
                         <svg class="icon" style="width:2em; height:2em;">
